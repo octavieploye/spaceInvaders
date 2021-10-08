@@ -1,0 +1,65 @@
+                            @import url('https://fonts.googleapis.com/css2?family=Akronim&display=swap');
+                            * {
+                                box-sizing: border-box;
+                            }
+                            
+                            body {
+                                background: black;
+                            }
+                            
+                            .header {
+                                text-align: center;
+                                font-family: 'Akronim', cursive;
+                                color: rgb(36, 236, 52);
+                                word-spacing: 1rem;
+                                line-height: 1.5;
+                            }
+                            
+                            h1 {
+                                font-size: 75px;
+                            }
+                            
+                            h2 {
+                                font-size: 35px;
+                            }
+                            
+                            ul {
+                                list-style: none;
+                                float: left;
+                            }
+                            
+                            button {
+                                border-radius: 20px;
+                                background: rgb(36, 236, 52);
+                                text-align: center;
+                                text-decoration: none;
+                                width: 200px;
+                                height: 50px;
+                                margin-right: 100px;
+                                display: inline-block;
+                                color: red;
+                                font-family: 'Akronim', cursive;
+                                font-size: 20px;
+                            }
+                            
+                            .container {
+                                height: 100vh;
+                                display: grid;
+                            }
+                            
+                            .grid {
+                                box-shadow: 0 0 20px 0 white;
+                                display: flex;
+                                flex-wrap: wrap;
+                                height: 100%;
+                                justify-content: center;
+                                height: 600px;
+                                width: 600px;
+                            }
+                            
+                            .grid div {
+                                border: 10px solid white;
+                                flex-grow: 1;
+                                height: 10%;
+                                width: 10%;
+                            }
