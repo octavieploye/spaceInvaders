@@ -45,6 +45,8 @@
                             .container {
                                 height: 100vh;
                                 display: grid;
+                                margin-left: 850px;
+                                padding: 50px;
                             }
                             
                             .grid {
@@ -58,7 +60,7 @@
                             }
                             
                             .grid div {
-                                border: 10px solid white;
+                                border: 1px solid white;
                                 flex-grow: 1;
                                 height: 10%;
                                 width: 10%;
