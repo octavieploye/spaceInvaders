@@ -45,7 +45,7 @@
                     .container {
                         height: 100vh;
                         display: grid;
-                        margin-left: 850px;
+                        margin: 0 auto;
                         padding: 50px;
                     }
                     
