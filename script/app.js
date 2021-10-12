@@ -55,7 +55,7 @@ function init() {
 
         cells[currentSpaceshipIndex].classList.remove('spaceShip')
 
-        Console.log(e.key)
+        console.log(e.key)
         console.log(currentSpaceshipIndex % 10);
         switch (e.key) {
             case 'ArrowLeft':
