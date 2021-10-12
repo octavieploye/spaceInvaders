@@ -9,7 +9,7 @@ function init() {
 
 
     const invadersMove = document.querySelectorAll('.invader')
-    const invadersIndexBlock = [0, 2]
+    let invadersIndexBlock = 0
 
     console.log(invadersIndexBlock)
     console.log(invadersMove)
@@ -28,23 +28,23 @@ function init() {
 
     // remove/add invaders
 
-    // function removeInvader() {
-    //     for (let i = 0; i < invadersMove.length; i++) {
+    function removeInvader(invadersMove) {
+        //for (let i = 0; i < invadersMove.length; i++) {
 
-    //         cells[invadersMove[i]].classList.remove('invader')
-    //     }
-    // }
-    // removeInvader();
-    // console.log(removeInvader);
+        cells[invadersIndexBlock].classList.remove('invader')
 
-    // function addInvader() {
-    //     for (let = i; i < invadersMove.length; i++)
-    //         if (invadersRemoved.includes(i)) {
-    //             cells[invadersMove[i]].classList.add('invader')
-    //             console.log(addInvader);
-    //         }
-    // }
-    // addInvader();
+    }
+    //}
+
+    removeInvader()
+    console.log(removeInvader)
+
+    function addInvader() {
+        cells[invadersIndexBlock].classList.add('invader')
+        console.log(addInvader);
+    }
+
+    addInvader();
 
     let currentSpaceshipIndex = 94
 
@@ -75,52 +75,76 @@ function init() {
 
     document.addEventListener('keydown', moveSpaceShip)
 
+
+
+    // move Invaders
+
+    function moveInvaders() {
+
+        //addInvader(invadersMove)
+        //console.log(addInvader)
+
+        setInterval(function() {
+            //removeInvader(invadersMove)
+            //console.log(removeInvader)
+
+            if (invadersIndexBlock += 0 + 2) {
+                direction = -1
+                goingRight = false
+                addInvader(invadersIndexBlock)
+                if (invadersIndexBlock -= 0 - 1) {
+
+                    direction = 1
+                    goingRight = true
+                    removeInvader(invadersIndexBlock)
+
+                }
+            }
+        }, 5000)
+    }
+    moveInvaders()
+    console.log(moveInvaders)
+        // const leftEdge = invadersMove[0] % 10 === 0
+        // const rightEdge = invadersMove[invadersMove.length - 1] % 9 === -1
+        // removeInvader()
+
+    // console.log(removeInvader)
+
+    // go right
+
+    //     if (rightEdge && goingRight) {
+
+    //         for (let i = 0; i < invadersMove.length; i++) {
+
+    //             invadersMove[i] += 10 + 1
+    //             direction = -1
+    //             goingRight = false
+    //         }
+    //         console.log(goingRight)
+    //     }
+
+
+    //     //go left
+
+    //     if (leftEdge && goingRight) {
+    //         for (let i = 0; i < invadersMove.length; i++) {
+    //             invadersMove[i] += 10 - 1
+    //             direction = 1
+    //             goingRight = true
+
+    //         }
+    //         console.log(goingRight)
+    //     }
+    //     for (let i = 0; i < invadersMove.length; i++) {
+    //         invadersMove[i] += direction
+    //     }
+    //     addInvader()
+    //     console.log(moveInvaders)
+    // }
+
+    // moveInvaders()
+    // invadersTiming = setInterval(moveInvaders, 1000)
+
+
 }
-
-// move Invaders
-
-//         function moveInvaders() {
-//             const leftEdge = invadersMove[0] % 10 === 0
-//             const rightEdge = invadersMove[invadersMove.length - 1] % 10 === -1
-//             removeInvader()
-
-//             console.log(removeInvader);
-
-//             // go right
-
-//             if (rightEdge && goingRight) {
-
-//                 for (let i = 0; i < invadersMove.length; i++) {
-
-//                     invadersMove[i] += 10 + 1
-//                     direction = -1
-//                     goingRight = false
-//                 }
-//                 console.log(goingRight);
-//             }
-
-
-//             //go left
-
-//             if (leftEdge && goingRight) {
-//                 for (let i = 0; i < invadersMove.length; i++) {
-//                     invadersMove[i] += 10 - 1
-//                     direction = 1
-//                     goingRight = true
-
-//                 }
-//                 console.log(goingRight);
-//             }
-//             for (let i = 0; i < invadersMove.length; i++) {
-//                 invadersMove[i] += direction
-//             }
-//             addInvader()
-//             console.log(moveInvaders);
-//         }
-//     }
-//     moveInvaders()
-//     invadersTiming = setInterval(moveInvaders, 1000)
-
-// }
-
 document.addEventListener('DOMContentLoaded', init)
