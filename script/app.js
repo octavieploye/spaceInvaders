@@ -9,32 +9,53 @@ function init() {
 
 
     const invadersMove = document.querySelectorAll('.invader')
-    const invadersIndexBlock = [0, 2, 4, 6, 8, 11, 13, 15, 17, 19, 20, 22, 24, 26, 28, 31, 33, 35, 37, 39]
+    const invadersIndexBlock = [0, 2]
 
-    console.log(invadersIndexBlock[0])
+    console.log(invadersIndexBlock)
+    console.log(invadersMove)
 
-    function removeInvader() {
+    //todo invader moveRight -->removeInvader else addInvader by one cell only at an interval of 2sec
+    //todo invader moveLeft  -->removeInvader else addInvader by one cell only at an interval of 2 sec
+    //todo Invader movedown  -->removeinvader else addInvader by oneCellOnly at an interval of 4.5sec
 
 
-        console.log(invadersMove.classList)
-        console.log(invadersMove[19]);
-
-        invadersMove[19].classList.remove('invader')
-    }
-
-    removeInvader()
-
-    let currentSpaceshipIndex = 94
     let direction = 1
     let goingRight = true
-        // let invaderRemoved: []
+    let invadersRemoved = []
+    let invadersTiming
 
+
+
+    // remove/add invaders
+
+    // function removeInvader() {
+    //     for (let i = 0; i < invadersMove.length; i++) {
+
+    //         cells[invadersMove[i]].classList.remove('invader')
+    //     }
+    // }
+    // removeInvader();
+    // console.log(removeInvader);
+
+    // function addInvader() {
+    //     for (let = i; i < invadersMove.length; i++)
+    //         if (invadersRemoved.includes(i)) {
+    //             cells[invadersMove[i]].classList.add('invader')
+    //             console.log(addInvader);
+    //         }
+    // }
+    // addInvader();
+
+    let currentSpaceshipIndex = 94
+
+
+    // todo move spaceship left/right
 
     function moveSpaceShip(e) {
 
         cells[currentSpaceshipIndex].classList.remove('spaceShip')
 
-        console.log(e.key);
+        Console.log(e.key)
         console.log(currentSpaceshipIndex % 10);
         switch (e.key) {
             case 'ArrowLeft':
@@ -46,6 +67,7 @@ function init() {
                 if (currentSpaceshipIndex % 10 != 9) currentSpaceshipIndex += 1
                 break
 
+
         }
         cells[currentSpaceshipIndex].classList.add('spaceShip')
 
@@ -53,6 +75,52 @@ function init() {
 
     document.addEventListener('keydown', moveSpaceShip)
 
-
 }
+
+// move Invaders
+
+//         function moveInvaders() {
+//             const leftEdge = invadersMove[0] % 10 === 0
+//             const rightEdge = invadersMove[invadersMove.length - 1] % 10 === -1
+//             removeInvader()
+
+//             console.log(removeInvader);
+
+//             // go right
+
+//             if (rightEdge && goingRight) {
+
+//                 for (let i = 0; i < invadersMove.length; i++) {
+
+//                     invadersMove[i] += 10 + 1
+//                     direction = -1
+//                     goingRight = false
+//                 }
+//                 console.log(goingRight);
+//             }
+
+
+//             //go left
+
+//             if (leftEdge && goingRight) {
+//                 for (let i = 0; i < invadersMove.length; i++) {
+//                     invadersMove[i] += 10 - 1
+//                     direction = 1
+//                     goingRight = true
+
+//                 }
+//                 console.log(goingRight);
+//             }
+//             for (let i = 0; i < invadersMove.length; i++) {
+//                 invadersMove[i] += direction
+//             }
+//             addInvader()
+//             console.log(moveInvaders);
+//         }
+//     }
+//     moveInvaders()
+//     invadersTiming = setInterval(moveInvaders, 1000)
+
+// }
+
 document.addEventListener('DOMContentLoaded', init)
