@@ -33,12 +33,12 @@ function init() {
     // remove/add invaders
 
     function removeInvader(invadersMove) {
-        //for (let i = 0; i < invadersMove.length; i++) {
+
 
         cells[invadersIndexBlock].classList.remove('invader')
 
     }
-    //}
+
 
     removeInvader()
     console.log(removeInvader)
@@ -103,6 +103,12 @@ function init() {
                 goingRight = true
                     //removeInvader(invadersIndexBlock)
 
+
+            }
+            if (invadersIndexBlock > 89) {
+                scoretDisplay.innerHTML = 'GAME OVER'
+                clearInterval(invadersStop)
+                    //removeInvader(invadersIndexBlock)
             }
 
         }
@@ -111,27 +117,16 @@ function init() {
 
         //todo invaders reaching bottom edge
 
-        // if (cells[invadersIndexBlock].classList.contains('invader', 'spaceShip')) {
-        //     scoretDisplay.innerHTML = 'GAME OVER'
-        //     clearInterval(invadersStop)
-        // }
 
-
-        // for (let i = 0; i < invadersMove.length; i++) {
-        //     if (invadersMove[i] > (cells.length)) {
-        //         scoreDisplay.innerHTML = 'GAME OVER'
-        //         clearInterval(invadersStop)
-        //     }
-        // }
-        // if (invadersRemoved.length === invadersMove.length) {
-        //     scoreDisplay.innerHTML = 'YOU WIN'
-        //     clearInterval(invadersStop)
-        // }
+        if (invadersRemoved.length === invadersMove.length) {
+            scoreDisplay.innerHTML = 'YOU WIN'
+            clearInterval(invadersStop)
+        }
 
     }
 
 
-    invadersStop = setInterval(moveInvaders, 1000)
+    invadersStop = setInterval(moveInvaders, 300)
 }
 
 document.addEventListener('DOMContentLoaded', init)
