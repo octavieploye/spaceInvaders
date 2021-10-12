@@ -85,14 +85,16 @@ function init() {
         //console.log(addInvader)
 
         setInterval(function() {
-            //removeInvader(invadersMove)
-            //console.log(removeInvader)
+            const leftEdge = invadersMove[0] % 10 === 0
+            const rightEdge = invadersMove[invadersMove.length - 1] % 9 === -1
+            removeInvader()
 
             if (invadersIndexBlock += 0 + 2) {
                 direction = -1
                 goingRight = false
                 addInvader(invadersIndexBlock)
-                if (invadersIndexBlock -= 0 - 1) {
+
+                if (invadersIndexBlock -= 2 - 1) {
 
                     direction = 1
                     goingRight = true
@@ -100,7 +102,7 @@ function init() {
 
                 }
             }
-        }, 5000)
+        }, 1000)
     }
     moveInvaders()
     console.log(moveInvaders)
