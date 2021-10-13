@@ -84,49 +84,101 @@ function init() {
 
 
     // setInterval(function() {
-    function moveInvaders() {
+    // function moveInvaders() {
 
-        const leftEdge = invadersMove[0] % 10 === 0
-        const rightEdge = invadersMove[invadersMove.length - 1] % 9 === -1
-        removeInvader()
+    //     const leftEdge = invadersMove[0] % 10 === 0
+    //     const rightEdge = invadersMove[invadersMove.length - 1] % 9 === -1
+    //     removeInvader()
 
-        //clearInterval(invadersMove)
+    //     //clearInterval(invadersMove)
 
-        if (invadersIndexBlock += 0 + 2) {
-            direction = -1
-            goingRight = false
-                //addInvader(invadersIndexBlock)
+    //     if (invadersIndexBlock += 0 + 2) {
+    //         direction = -1
+    //         goingRight = false
+    //             //addInvader(invadersIndexBlock)
 
-            if (invadersIndexBlock -= 2 - 1) {
+    //         if (invadersIndexBlock -= 2 - 1) {
 
-                direction = 1
-                goingRight = true
-                    //removeInvader(invadersIndexBlock)
+    //             direction = 1
+    //             goingRight = true
+    //                 //removeInvader(invadersIndexBlock)
+
+
+    //         }
+    //         if (invadersIndexBlock > 89) {
+    //             scoretDisplay.innerHTML = 'GAME OVER'
+    //             clearInterval(invadersStop)
+    //                 //removeInvader(invadersIndexBlock)
+    //         }
+
+    //     }
+    //     addInvader(invadersIndexBlock)
+    //         // }, 1000)
+
+
+
+
+    //     if (invadersRemoved.length === invadersMove.length) {
+    //         scoreDisplay.innerHTML = 'YOU WIN'
+    //         clearInterval(invadersStop)
+    //     }
+
+    // }
+
+
+    // invadersStop = setInterval(moveInvaders, 300)
+
+    //todo laser shoot
+
+    function shoot(e) {
+        let laserID
+        let currentLaserIndex = currentSpaceshipIndex
+        console.log(e.key)
+        console.log(currentLaserIndex % 10)
+
+        goingUp = true
+        direction = -1
+
+        function moveLaser() {
+
+            cells[currentLaserIndex].classList.remove('laser')
+
+            switch (e.key) {
+                case 'ArrowUp':
+
+                    currentLaserIndex -= 10
+                    if (currentLaserIndex < 10) {
+                        clearInterval(laserId)
+                    }
+
+                    // if (cells[currentLaserIndex].classList.contains('invader')) {
+                    //     cells[currentLaserIndex].classList.remove('laser')
+                    //     cells[currentLaserIndex].classList.remove('invader')
+
+                    //     const invadersRemoved = invadersIndexBlock.indexOf(currentLaserIndex)
+                    //     invadersRemoved.push(invadersRemoved)
+                    //     score += 100
+                    //     scoretDisplay.innerHTML = score
+                    //     console.log(invadersRemoved);
 
 
             }
-            if (invadersIndexBlock > 89) {
-                scoretDisplay.innerHTML = 'GAME OVER'
-                clearInterval(invadersStop)
-                    //removeInvader(invadersIndexBlock)
-            }
+            cells[currentLaserIndex].classList.add('laser')
+
 
         }
-        addInvader(invadersIndexBlock)
-            // }, 1000)
-
-        //todo invaders reaching bottom edge
+        moveLaser()
 
 
-        if (invadersRemoved.length === invadersMove.length) {
-            scoreDisplay.innerHTML = 'YOU WIN'
-            clearInterval(invadersStop)
-        }
+        laserID = setInterval(moveLaser, 100)
+
+
 
     }
 
-
-    invadersStop = setInterval(moveInvaders, 300)
+    document.addEventListener('keydown', shoot)
+    console.log('ArrowUp')
 }
+
 
 document.addEventListener('DOMContentLoaded', init)

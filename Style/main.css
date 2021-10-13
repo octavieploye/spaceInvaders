@@ -78,4 +78,12 @@
                         background-size: 80%;
                         background-repeat: no-repeat;
                         background-position: center;
+                        z-index: 3;
+                    }
+                    
+                    .grid div.laser {
+                        background-image: url("../images/laser2.jpg");
+                        background-size: 80%;
+                        background-repeat: no-repeat;
+                        background-position: top;
                     }
