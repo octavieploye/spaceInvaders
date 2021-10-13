@@ -147,38 +147,36 @@ function init() {
                 case 'ArrowUp':
 
                     currentLaserIndex -= 10
-                    if (currentLaserIndex < 10) {
-                        clearInterval(laserId)
+
+
+                    if (cells[currentLaserIndex].classList.contains('invader')) {
+                        //cells[currentLaserIndex].classList.remove('laser')
+                        cells[currentLaserIndex].classList.remove('invader')
+
+                        const invadersRemoved = invadersIndexBlock.indexOf(currentLaserIndex)
+                        invadersRemoved.push(invadersRemoved)
+                        score += 100
+                        scoretDisplay.innerHTML = score
+                        console.log(invadersRemoved);
+
+
                     }
-
-                    // if (cells[currentLaserIndex].classList.contains('invader')) {
-                    //     cells[currentLaserIndex].classList.remove('laser')
-                    //     cells[currentLaserIndex].classList.remove('invader')
-
-                    //     const invadersRemoved = invadersIndexBlock.indexOf(currentLaserIndex)
-                    //     invadersRemoved.push(invadersRemoved)
-                    //     score += 100
-                    //     scoretDisplay.innerHTML = score
-                    //     console.log(invadersRemoved);
 
 
             }
             cells[currentLaserIndex].classList.add('laser')
 
 
+            if (currentLaserIndex < 10) {
+                clearInterval(laserId)
+            }
+
         }
         moveLaser()
-
-
         laserID = setInterval(moveLaser, 100)
-
-
-
     }
-
     document.addEventListener('keydown', shoot)
     console.log('ArrowUp')
 }
-
 
 document.addEventListener('DOMContentLoaded', init)

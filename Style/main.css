@@ -86,4 +86,5 @@
                         background-size: 80%;
                         background-repeat: no-repeat;
                         background-position: top;
+                        z-index: 1;
                     }
