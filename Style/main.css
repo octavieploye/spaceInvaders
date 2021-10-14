@@ -1,90 +1,100 @@
-                    @import url('https://fonts.googleapis.com/css2?family=Akronim&display=swap');
-                    * {
-                        box-sizing: border-box;
-                    }
-                    
-                    body {
-                        background: black;
-                    }
-                    
-                    .header {
-                        text-align: center;
-                        font-family: 'Akronim', cursive;
-                        color: rgb(36, 236, 52);
-                        word-spacing: 1rem;
-                        line-height: 1.5;
-                    }
-                    
-                    h1 {
-                        font-size: 75px;
-                    }
-                    
-                    h2 {
-                        font-size: 35px;
-                    }
-                    
-                    ul {
-                        list-style: none;
-                        float: left;
-                    }
-                    
-                    button {
-                        border-radius: 20px;
-                        background: rgb(36, 236, 52);
-                        text-align: center;
-                        text-decoration: none;
-                        width: 200px;
-                        height: 50px;
-                        margin-right: 100px;
-                        display: inline-block;
-                        color: red;
-                        font-family: 'Akronim', cursive;
-                        font-size: 20px;
-                    }
-                    
-                    .container {
-                        height: 100vh;
-                        display: grid;
-                        margin: 0 auto;
-                        padding: 50px;
-                    }
-                    
-                    .grid {
-                        box-shadow: 0 0 20px 0 rgb(36, 236, 52);
-                        display: flex;
-                        flex-wrap: wrap;
-                        height: 100%;
-                        justify-content: center;
-                        height: 600px;
-                        width: 600px;
-                    }
-                    
-                    .grid div {
-                        border: 1px solid grey;
-                        flex-grow: 1;
-                        height: 10%;
-                        width: 10%;
-                    }
-                    
-                    .grid div.invader {
-                        background-image: url("../images/images.png");
-                        background-size: 100%;
-                        background-repeat: no-repeat;
-                        background-position: center;
-                    }
-                    
-                    .grid div.spaceShip {
-                        background-image: url("../images/player1.png");
-                        background-size: 80%;
-                        background-repeat: no-repeat;
-                        background-position: center;
-                        z-index: 3;
-                    }
-                    
-                    .grid div.laser {
-                        background-image: url("../images/laser2.jpg");
-                        background-size: 80%;
-                        background-repeat: no-repeat;
-                        background-position: top;
-                        z-index: 1;
-                    }
+@import url('https://fonts.googleapis.com/css2?family=Akronim&display=swap');
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: black;
+}
+
+.header {
+    text-align: center;
+    font-family: 'Akronim', cursive;
+    color: rgb(36, 236, 52);
+    word-spacing: 1rem;
+    line-height: 1.5;
+}
+
+h1 {
+    font-size: 75px;
+}
+
+h2 {
+    font-size: 35px;
+}
+
+ul {
+    list-style: none;
+    float: left;
+}
+
+button {
+    border-radius: 20px;
+    background: rgb(36, 236, 52);
+    text-align: center;
+    text-decoration: none;
+    width: 200px;
+    height: 50px;
+    margin-right: 100px;
+    display: inline-block;
+    color: red;
+    font-family: 'Akronim', cursive;
+    font-size: 20px;
+}
+
+.start:hover {
+    background-color: rgb(17, 58, 243);
+    color: red
+}
+
+.reset:hover {
+    background-color: rgb(17, 58, 243);
+    color: red
+}
+
+.container {
+    height: 100vh;
+    display: grid;
+    margin: 0 auto;
+    padding: 50px;
+}
+
+.grid {
+    box-shadow: 0 0 20px 0 rgb(36, 236, 52);
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    justify-content: center;
+    height: 600px;
+    width: 600px;
+}
+
+.grid div {
+    border: 1px solid grey;
+    flex-grow: 1;
+    height: 10%;
+    width: 10%;
+}
+
+.grid div.invader {
+    background-image: url("../images/images.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.grid div.laser {
+    background-image: url("../images/laser2.jpg");
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: top;
+    z-index: 1;
+}
+
+.grid div.spaceShip {
+    background-image: url("../images/player1.png");
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 3;
+}
