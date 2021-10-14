@@ -19,7 +19,7 @@ function init() {
 
     function start() {
         invadersStop = setInterval(moveInvaders, 1000)
-            //invadersStop = setInterval(moveInvaders2, 1000)
+        invadersStop = setInterval(moveInvaders2, 1000)
     }
 
     function reset() {
@@ -51,6 +51,7 @@ function init() {
     let currentSpaceshipIndex = 94;
 
     // todo move spaceship left/right
+    cells[currentSpaceshipIndex].classList.add("spaceShip");
 
     function moveSpaceShip(e) {
         cells[currentSpaceshipIndex].classList.remove("spaceShip");
@@ -488,6 +489,7 @@ function init() {
             switch (e.key) {
                 case "ArrowUp":
                     currentLaserIndex -= 10;
+                    cells[currentLaserIndex].classList.add("laser")
 
                     if (cells[currentLaserIndex].classList.contains("invader")) {
 
@@ -502,7 +504,7 @@ function init() {
                     //     scoretDisplay.innerHTML = "You Win!"
                     // }
             }
-            cells[currentLaserIndex].classList.add("laser")
+            // cells[currentLaserIndex].classList.add("laser")
 
             if (currentLaserIndex < 10) {
                 cells[currentLaserIndex].classList.remove("laser")
